@@ -13,4 +13,5 @@ bool Neuron::setValue(double value) {
 	if (value < 0 || value > 1)
 		return false;
 	m_value = value;
+    return true;
 }

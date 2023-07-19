@@ -1,3 +1,5 @@
+#define WINDOWS_ENV 0
+
 #include "MNIST_reader.h"
 
 #include <iostream>
@@ -5,16 +7,24 @@
 #include <string>
 
 MNIST_reader::MNIST_reader() {
-	std::string base_path_assets = "C:\\Users\\bohre\\dev\\private\\machine_learning\\neuronal_networks\\Zahlen_Erkennung\\Neuronales_Netz\\assets\\";
+#if WINDOWS_ENV == 1
+    std::string base_path_assets = "C:\\Users\\bohre\\dev\\private\\machine_learning\\neuronal_networks\\Zahlen_Erkennung\\Neuronales_Netz\\assets\\";
+    // paths training data
+    std::string full_path_training_images = base_path_assets + "MNIST_DATABASE\\train-images-idx3-ubyte";
+    std::string full_path_training_labels = base_path_assets + "MNIST_DATABASE\\train-labels-idx1-ubyte";
 
-	// paths training data
-	std::string full_path_training_images = base_path_assets + "MNIST_DATABASE\\train-images-idx3-ubyte";
-	std::string full_path_training_labels = base_path_assets + "MNIST_DATABASE\\train-labels-idx1-ubyte";
+    // paths test data
+    std::string full_path_test_images = base_path_assets + "MNIST_DATABASE\\t10k-images-idx3-ubyte";
+    std::string full_path_test_labels = base_path_assets + "MNIST_DATABASE\\t10k-labels-idx3-ubyte";
+#else
+    std::string full_path_training_images = "./assets/MNIST_DATABASE/train-images-idx3-ubyte";
+    std::string full_path_training_labels = "./assets/MNIST_DATABASE/train-labels-idx1-ubyte";
 
-	std::string full_path_test_images = base_path_assets + "MNIST_DATABASE\\t10k-images-idx3-ubyte";
-	std::string full_path_test_labels = base_path_assets + "MNIST_DATABASE\\t10k-labels-idx3-ubyte";
+    // paths test data
+    std::string full_path_test_images = "./assets/MNIST_DATABASE/t10k-images-idx3-ubyte";
+    std::string full_path_test_labels = "./assets/MNIST_DATABASE/t10k-labels-idx3-ubyte";
+#endif
 
-	// paths test data
 	m_training_images = std::ifstream(full_path_training_images, std::ios::binary | std::ios::in);
 	m_training_labels = std::ifstream(full_path_training_labels, std::ios::binary | std::ios::in);
 
@@ -27,7 +37,8 @@ MNIST_reader::MNIST_reader() {
 		|| !m_test_labels.is_open()) {
 		std::cout << "ERROR beim oeffnen eines Datensatzes" << std::endl;
 		exit(-1);
-	}
+	} else
+        std::cout << "Alle Datensaetze konnten geoefnet werden!" << std::endl << std::endl;
 
 	read_label_file_into_buffer();
 }
