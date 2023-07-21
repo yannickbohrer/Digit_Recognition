@@ -3,8 +3,8 @@
 #include <fstream>
 #include <filesystem>
 
-#include "MNIST_reader.h"
-#include "Network.h"
+#include "headers/MNIST_reader.h"
+#include "headers/Network.h"
 
 
 

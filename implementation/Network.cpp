@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 
-#include "Network.h"
-#include "Layer.h"
+#include "../headers/Network.h"
+#include "../headers/Layer.h"
 
 #define DEBUG_MODE 1
 

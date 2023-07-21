@@ -19,17 +19,19 @@ private:
 	std::ifstream m_test_labels;
 
 	// file buffers
-	std::vector<unsigned char> m_buffer_training_images;
-	std::vector<unsigned char> m_buffer_training_labels;
-	std::vector<unsigned char> m_buffer_test_images;
-	std::vector<unsigned char> m_buffer_test_labels;
-
-	// 
+    /*
+     * DATA is stored in high endian -> intel needs to convert from low endian
+     */
+	std::vector<char> m_buffer_training_images;
+	std::vector<char> m_buffer_training_labels;
+	std::vector<char> m_buffer_test_images;
+	std::vector<char> m_buffer_test_labels;
 
 // methodes
 private:
-	std::vector<unsigned char> read_label_file_into_buffer(bool training_labels = true);
-	std::vector<unsigned char> read_image_file_into_buffer(std::ifstream image_set);
+	std::vector<char> read_label_file_into_buffer(bool training_labels = true);
+	std::vector<char> read_image_file_into_buffer(std::ifstream image_set);
+
 };
 
 

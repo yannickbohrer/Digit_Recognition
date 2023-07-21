@@ -8,7 +8,7 @@
 
 class Layer {
 public:
-	Layer(size_t size);
+	explicit Layer(size_t size);
 
 	size_t size() const;
 

@@ -1,7 +1,6 @@
 #include <iostream>
 
-#include "Layer.h"
-#include "Neuron.h"
+#include "../headers/Layer.h"
 
 Layer::Layer(size_t size) {
 	m_size = size;
