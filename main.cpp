@@ -1,15 +1,8 @@
 #include <iostream>
-#include <string>
-#include <fstream>
-#include <filesystem>
+#include "headers/Network.hpp"
 
-#include "headers/MNIST_reader.h"
-#include "headers/Network.h"
+int main(int argc, char* argv[]) {
+    Network network;
 
-
-
-int main(void) {
-	MNIST_reader mnist_reader;
-	//Network network;
-	return 0;
+    return 0;
 }

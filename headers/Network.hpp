@@ -1,9 +1,9 @@
-#ifndef NETWORK_H
-#define NETWORK_H
+#ifndef NETWORK_HPP
+#define NETWORK_HPP
 
 #include <vector>
-
-#include "Layer.h"
+#include "Layer.hpp"
+#include "MNIST_initializer.hpp"
 
 class Network {
 public:

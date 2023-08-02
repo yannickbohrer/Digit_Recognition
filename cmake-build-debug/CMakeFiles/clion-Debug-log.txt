@@ -1,4 +1,4 @@
-/snap/clion/246/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/246/bin/ninja/linux/x64/ninja -G Ninja -S /home/yanboh/dev/private/machine_learning/Digit_Recognition -B /home/yanboh/dev/private/machine_learning/Digit_Recognition/cmake-build-debug
--- Configuring done
--- Generating done
+/snap/clion/248/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/248/bin/ninja/linux/x64/ninja -G Ninja -S /home/yanboh/dev/private/machine_learning/Digit_Recognition -B /home/yanboh/dev/private/machine_learning/Digit_Recognition/cmake-build-debug
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
 -- Build files have been written to: /home/yanboh/dev/private/machine_learning/Digit_Recognition/cmake-build-debug

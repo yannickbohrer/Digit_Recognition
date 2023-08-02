@@ -1,13 +1,51 @@
+#include "../headers/MNIST_initializer.hpp"
+
 #define WINDOWS_ENV 0
 
-#include "../headers/MNIST_reader.h"
+#if WINDOWS_ENV == 0
+#include "../headers/mnist_reader.hpp"
+#else
+#include "../headers/mnist_reader_less.hpp"
+#endif
+
+
+MNIST_initializer::MNIST_initializer() {
+    mnist::MNIST_dataset<std::vector, std::vector<uint8_t>, uint8_t> dataset =
+            mnist::read_dataset<std::vector, std::vector, uint8_t, uint8_t>(MNIST_DATA_LOCATION);
+    m_training_images = dataset.training_images;
+    m_test_images = dataset.test_images;
+    m_training_labels = dataset.training_labels;
+    m_test_labels = dataset.test_labels;
+}
+
+std::vector<std::vector<unsigned char>> MNIST_initializer::training_images() const {
+    return m_training_images;
+}
+
+std::vector<std::vector<unsigned char>> MNIST_initializer::test_images() const {
+    return m_test_images;
+}
+
+std::vector<unsigned char> MNIST_initializer::training_labels() const {
+    return m_training_labels;
+}
+
+std::vector<unsigned char> MNIST_initializer::test_labels() const {
+    return m_test_labels;
+}
+
+
+
+
+/******************** mein Versuch ********************/
+/*
 
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <memory>
 
-MNIST_reader::MNIST_reader() {
+MNIST_initializer::MNIST_initializer() {
 #if WINDOWS_ENV == 1
     std::string base_path_assets = "C:\\Users\\bohre\\dev\\private\\machine_learning\\neuronal_networks\\Zahlen_Erkennung\\Neuronales_Netz\\assets\\";
     // paths training data
@@ -45,7 +83,7 @@ MNIST_reader::MNIST_reader() {
 	read_label_file_into_buffer();
 }
 
-std::vector<char> MNIST_reader::read_label_file_into_buffer(bool training_labels) {
+std::vector<char> MNIST_initializer::read_label_file_into_buffer(bool training_labels) {
 	const uint32_t magic_number = 2049;
 	const uint32_t offset = 4;
 
@@ -85,7 +123,7 @@ std::vector<char> MNIST_reader::read_label_file_into_buffer(bool training_labels
 	return res_vec;
 }
 
-std::vector<char> MNIST_reader::read_image_file_into_buffer(std::ifstream image_set) {
+std::vector<char> MNIST_initializer::read_image_file_into_buffer(std::ifstream image_set) {
 	const unsigned int magic_number = 2051;
 	const unsigned int offset = 4;
 
@@ -94,3 +132,4 @@ std::vector<char> MNIST_reader::read_image_file_into_buffer(std::ifstream image_
 	return buffer;
 }
 
+*/

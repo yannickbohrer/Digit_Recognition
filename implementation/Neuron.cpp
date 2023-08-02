@@ -1,4 +1,4 @@
-#include "../headers/Neuron.h"
+#include "../headers/Neuron.hpp"
 
 Neuron::Neuron(double value) {
 	if (value >= 0 && value <= 1)
