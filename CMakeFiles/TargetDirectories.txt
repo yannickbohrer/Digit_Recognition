@@ -1,3 +1,0 @@
-/home/yanboh/dev/private/machine_learning/Digit_Recognition/CMakeFiles/Digit_Recognition.dir
-/home/yanboh/dev/private/machine_learning/Digit_Recognition/CMakeFiles/edit_cache.dir
-/home/yanboh/dev/private/machine_learning/Digit_Recognition/CMakeFiles/rebuild_cache.dir
