@@ -4,6 +4,7 @@
 #include <iostream>
 
 int main(int argc, char *argv[]) {
+    std::cout << "TEST" << std::endl;
     const uint32_t number_of_input_neurons = 784;   // 28 x 28 Pixel picture input
     const uint32_t number_of_hidden_layers = 2; 
     const uint32_t number_of_neurons_per_hidden_layer = 16;
