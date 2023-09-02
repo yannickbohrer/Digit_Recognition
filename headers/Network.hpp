@@ -5,6 +5,7 @@
 #include "Layer.hpp"
 #include "MNIST_initializer.hpp"
 
+
 class Network {
 public:
 	Network();

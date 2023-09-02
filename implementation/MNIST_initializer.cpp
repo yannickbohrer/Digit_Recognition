@@ -1,5 +1,6 @@
 #include "../headers/MNIST_initializer.hpp"
 
+// WINDOWS_ENV MUST BE ADJUSTED ACCORDINGLY
 #define WINDOWS_ENV 0
 
 #if WINDOWS_ENV == 0
