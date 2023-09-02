@@ -8,7 +8,12 @@
 
 class Network {
 public:
-	Network();
+	Network(
+        uint32_t input_neuron_count,
+        uint32_t number_of_hidden_layers,
+        uint32_t neurons_per_hidden_layer,
+        uint32_t output_neuron_count
+    );
 
 private:
 	Layer* m_input_layer;
