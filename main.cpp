@@ -17,5 +17,5 @@ int main(int argc, char *argv[]) {
         number_of_neurons_per_hidden_layer,
         number_of_output_neurons
     );
-    return 0;
+    return EXIT_SUCCESS;
 }
