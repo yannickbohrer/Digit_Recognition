@@ -11,10 +11,9 @@
 ## How to build the project locally:
 
 Run the following commands consecutively from within the root of this repo:
-1. `mkdir build`    (create build dir)   
-2. `cmake -S ./ -B build/`
-3. `cd build && make`
-4. `./Digit_Recognition`    (run executable)
+1. `cmake -S ./ -B build/`
+2. `cd build && make`
+3. `./Digit_Recognition`    (run executable)
 
 It is not necessary to rebuild the project every time one tries to run it,
 simply `make` in build dir to update executable

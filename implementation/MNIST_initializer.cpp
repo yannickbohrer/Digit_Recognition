@@ -4,9 +4,9 @@
 #define WINDOWS_ENV 0
 
 #if WINDOWS_ENV == 0
-#include "../headers/mnist_reader.hpp"
+#include "../mnist/mnist_reader.hpp"
 #else
-#include "../headers/mnist_reader_less.hpp"
+#include "../mnist/mnist_reader_less.hpp"
 #endif
 
 

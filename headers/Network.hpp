@@ -17,7 +17,7 @@ public:
 
 private:
 	Layer* m_input_layer;
-	std::vector<Layer*> m_hidden_layers;
+    std::vector<Layer*> m_hidden_layers;
 	Layer* m_output_layer;
 };
 
