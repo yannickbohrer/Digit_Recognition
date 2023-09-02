@@ -17,3 +17,7 @@ Run the following commands consecutively from within the root of this repo:
 
 It is not necessary to rebuild the project every time one tries to run it,
 simply `make` in build dir to update executable
+
+---
+
+MNIST Dataset reader: [https://github.com/wichtounet/mnist](https://github.com/wichtounet/mnist)
