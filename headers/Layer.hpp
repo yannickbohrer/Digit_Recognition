@@ -11,7 +11,6 @@ public:
 	explicit Layer(std::size_t size);
 
     std::size_t size() const;
-
 	void printValues() const;
 
 	Neuron* operator [] (std::size_t idx);

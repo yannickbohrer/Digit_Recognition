@@ -4,9 +4,9 @@
 
 class Neuron {
 public:
-	Neuron(double value = 0.0);
-	double value() const;
-	bool setValue(double value);
+	explicit Neuron(double value = 0.0);
+	[[nodiscard]] double value() const;
+	void setValue(double value);
 
 private:
 	double m_value;

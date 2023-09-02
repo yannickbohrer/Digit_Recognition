@@ -2,13 +2,13 @@
 #define NETWORK_HPP
 
 #include <vector>
+#include <cstdint>
 #include "Layer.hpp"
-#include "MNIST_initializer.hpp"
 
 
 class Network {
 public:
-	Network(
+	explicit Network(
         uint32_t input_neuron_count,
         uint32_t number_of_hidden_layers,
         uint32_t neurons_per_hidden_layer,
