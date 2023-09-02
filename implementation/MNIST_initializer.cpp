@@ -35,3 +35,11 @@ std::vector<uint8_t> MNIST_initializer::training_labels() const {
 std::vector<uint8_t> MNIST_initializer::test_labels() const {
     return m_test_labels;
 }
+
+void MNIST_initializer::print_database_info() const {
+    std::cout << "Number of training labels: " << m_training_labels.size() << std::endl;
+    std::cout << "Number of training images: " << m_training_images.size() << std::endl;
+    std::cout << "Number of test labels: " << m_test_labels.size() << std::endl;
+    std::cout << "Number of test images: " << m_test_images.size() << std::endl;
+}
+

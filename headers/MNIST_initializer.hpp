@@ -14,6 +14,8 @@ public:
     [[nodiscard]] std::vector<uint8_t> training_labels() const;
     [[nodiscard]] std::vector<uint8_t> test_labels() const;
 
+    void print_database_info() const;
+
 private:
 	std::vector<std::vector<unsigned char>> m_training_images;
     std::vector<std::vector<unsigned char>> m_test_images;
