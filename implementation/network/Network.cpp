@@ -1,8 +1,8 @@
 #include <cstdint>
 #include <iostream>
 
-#include "../headers/Layer.hpp"
-#include "../headers/Network.hpp"
+#include "../../headers/network/Layer.hpp"
+#include "../../headers/network/Network.hpp"
 
 Network::Network(
     uint32_t input_neuron_count,

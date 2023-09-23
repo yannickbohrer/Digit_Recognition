@@ -18,6 +18,6 @@ int main(int argc, char *argv[]) {
     );
 
     Training training(network);
-    training.test_sigmuid_times();
+    training.test_sigmoid_times();
     return EXIT_SUCCESS;
 }

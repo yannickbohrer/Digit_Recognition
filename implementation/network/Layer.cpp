@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "../headers/Layer.hpp"
+#include "../../headers/network/Layer.hpp"
 
 Layer::Layer(size_t size) {
 	m_size = size;

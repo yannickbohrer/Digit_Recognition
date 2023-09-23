@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../headers/Neuron.hpp"
+#include "../../headers/network/Neuron.hpp"
 
 Neuron::Neuron(double value) {
 	if (value >= 0 && value <= 1)
