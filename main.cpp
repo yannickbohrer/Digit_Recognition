@@ -1,5 +1,5 @@
-#include "headers/Training.hpp"
-#include "headers/Network.hpp"
+#include "headers/training/Training.hpp"
+#include "headers/network/Network.hpp"
 #include <cstdint>
 #include <iostream>
 
@@ -18,6 +18,6 @@ int main(int argc, char *argv[]) {
     );
 
     Training training(network);
-    training.test_sigmoid_times();
+
     return EXIT_SUCCESS;
 }
