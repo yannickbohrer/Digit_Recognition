@@ -17,9 +17,6 @@ Run the following commands consecutively from within the root of this repo:
 2. `cd build && make`
 3. `./Digit_Recognition`    (run executable)
 
-It is not necessary to rebuild the project every time one tries to run it,
-simply `make` in build dir to update executable
-
 ---
 
 MNIST Dataset reader:    [https://github.com/wichtounet/mnist](https://github.com/wichtounet/mnist)

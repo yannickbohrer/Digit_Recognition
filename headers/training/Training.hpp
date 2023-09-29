@@ -16,8 +16,8 @@ private:
   const Network *m_network;
   const MNIST_initializer *m_database;
 
-  [[nodiscard]] double sigmoid(double value) const;
-  [[nodiscard]] double NOT_SO_fast_sigmoid_approximation(double value) const;
+  double sigmoid(double value) const;
+  double NOT_SO_fast_sigmoid_approximation(double value) const;
 };
 
 #endif
