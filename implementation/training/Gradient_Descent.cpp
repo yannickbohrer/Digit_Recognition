@@ -2,10 +2,13 @@
 
 #include <cmath>
 
-Gradient_Descent::Gradient_Descent() {}
+Gradient_Descent::Gradient_Descent(std::vector<double>& vector, Costfunction& costfunction) {
+    m_starting_vector = vector;
+    m_costfunction = costfunction;
+}
 
 std::vector<double> Gradient_Descent::gradient(
-    std::vector<double> x, double (*f)(std::vector<double> pos)) {
+    std::vector<double>& x, double (*f)(std::vector<double>& pos)) {
     std::vector<double> grad(x.size());
     double h = 1e-8;
     double function_value = f(x);
@@ -22,7 +25,7 @@ std::vector<double> Gradient_Descent::gradient(
 }
 
 void Gradient_Descent::gradient_descent_recursion(
-    std::vector<double> x, double (*f)(std::vector<double> pos), double lambda,
+    std::vector<double>& x, double (*f)(std::vector<double>& pos), double lambda,
     int counter) {
     std::vector<double> grad = gradient(x, f);
 
