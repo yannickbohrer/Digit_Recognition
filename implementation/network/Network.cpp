@@ -1,21 +1,17 @@
+#include "../../headers/network/Network.hpp"
+
 #include <cstdint>
 #include <iostream>
 
 #include "../../headers/network/Layer.hpp"
-#include "../../headers/network/Network.hpp"
 
-Network::Network(
-    uint32_t input_neuron_count,
-    uint32_t number_of_hidden_layers,
-    uint32_t neurons_per_hidden_layer,
-    uint32_t output_neuron_count
-) {
-    if (input_neuron_count < 1
-        || number_of_hidden_layers < 1
-        || number_of_hidden_layers < 1
-        || output_neuron_count < 1
-    ) {
-        std::cerr << "failed initializing network: invalid hyperparameters" << std::endl;
+Network::Network(uint32_t input_neuron_count, uint32_t number_of_hidden_layers,
+                 uint32_t neurons_per_hidden_layer,
+                 uint32_t output_neuron_count) {
+    if (input_neuron_count < 1 || number_of_hidden_layers < 1 ||
+        number_of_hidden_layers < 1 || output_neuron_count < 1) {
+        std::cerr << "failed initializing network: invalid hyperparameters"
+                  << std::endl;
         exit(EXIT_FAILURE);
     }
     m_input_layer = new Layer(input_neuron_count);
