@@ -18,11 +18,6 @@ private:
 
   [[nodiscard]] double sigmoid(double value) const;
   [[nodiscard]] double NOT_SO_fast_sigmoid_approximation(double value) const;
-  void gradient_descend_recursion(std::vector<double> x,
-                        double (*funktion)(std::vector<double> pos),
-                        double lambda = 1.0, int counter = 0);
-  [[nodiscard]] std::vector<double>
-  gradient(std::vector<double> x, double (*funktion)(std::vector<double> pos));
 };
 
 #endif

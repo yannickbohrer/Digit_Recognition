@@ -24,57 +24,6 @@ double Training::NOT_SO_fast_sigmoid_approximation(double value) const {
     return (value / (1 + std::abs(value)));
 }
 
-std::vector<double> Training::gradient(std::vector<double> x, double(*f)(std::vector<double> pos)) {
-    std::vector<double> grad(x.size());
-    double h = 1e-8;
-    double function_value = f(x);
-
-    for (int i = 0; i < x.size(); i++) {
-        std::vector<double> gradTmp(x.size());
-        gradTmp = x;
-        gradTmp[i] += h;
-        
-        double tmp = (f(gradTmp) - function_value) / h;
-        grad[i] = tmp;
-    }
-    return grad;
-}
-
-void Training::gradient_descend_recursion(std::vector<double> x, double(*f)(std::vector<double> pos), double lambda = 1.0, int counter = 0) {
-    std::vector<double> grad = gradient(x, f);
-    std::vector<double> vectorStep = x + (grad * lambda);
-
-    double xValue = f(x);
-    double valueAtFirstStep = f(vectorStep);
-    double valueAtStep;
-    double gradLength = grad.size();
-
-    if (counter == 25)
-        return;
-
-    if (gradLength < 1e-5)
-        return;
-
-    if (valueAtFirstStep <= xValue) {
-        valueAtStep = valueAtFirstStep;
-        while (valueAtStep <= xValue) {
-            lambda = lambda / 2;
-            vectorStep = x + (grad * lambda);
-            valueAtStep = f(vectorStep);
-        }
-        gradient_descend_recursion(vectorStep, f, lambda, ++counter);
-        return;
-    }
-
-    std::vector<double> vectorTest = x + (grad * lambda * 2);
-    double valueAtTest = f(vectorTest);
-    
-    if (valueAtTest > valueAtFirstStep) {
-        gradient_descend_recursion(vectorTest, f, lambda * 2, ++counter);
-        return;
-    }
-    gradient_descend_recursion(vectorStep, f, lambda, ++counter);
-}
 
 
 void Training::test_sigmoid_times() const {
