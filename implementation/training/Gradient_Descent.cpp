@@ -10,16 +10,15 @@ Gradient_Descent::Gradient_Descent(std::vector<double>& vector, Costfunction& co
 std::vector<double> Gradient_Descent::gradient(
     std::vector<double>& x, double (*f)(std::vector<double>& pos)) {
     std::vector<double> grad(x.size());
-    double h = 1e-8;
-    double function_value = f(x);
+    double h = 1 / 1e-8;
+    double y1 = f(x);
 
-    for (int i = 0; i < x.size(); i++) {
-        std::vector<double> grad_tmp(x.size());
-        grad_tmp = x;
-        grad_tmp[i] += h;
+    for (int index = 0; index < x.size(); index++) {
+        std::vector<double> x2(x.size());
+        x2 = x;
+        x2.at(index) += h;
 
-        double tmp = (f(grad_tmp) - function_value) / h;
-        grad[i] = tmp;
+        grad.at(index) = (f(x2) - y1) * h;
     }
     return grad;
 }
@@ -29,9 +28,7 @@ void Gradient_Descent::gradient_descent_recursion(
     int counter) {
     std::vector<double> grad = gradient(x, f);
 
-    std::vector<double> one_lambda_step;
-    for (double val : x)
-        one_lambda_step.emplace_back(val);
+    std::vector<double> one_lambda_step = x;
     for (std::size_t index = 0; index < one_lambda_step.size(); index++)
         one_lambda_step.at(index) -= (grad.at(index) * lambda);
 
@@ -52,7 +49,7 @@ void Gradient_Descent::gradient_descent_recursion(
         grad_length = std::sqrt(sum);
     }
 
-    if (counter == 25)
+    if (counter == 50)
         return;
 
     if (grad_length < 1e-5)
@@ -76,9 +73,7 @@ void Gradient_Descent::gradient_descent_recursion(
         return;
     }
 
-    std::vector<double> vector_test;
-    for (const double val : x)
-        vector_test.emplace_back(val);
+    std::vector<double> vector_test = x;
     for (std::size_t index = 0; index < grad.size(); index++)
         vector_test.at(index) -= (grad.at(index) * lambda * 2);
 
