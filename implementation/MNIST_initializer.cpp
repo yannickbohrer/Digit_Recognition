@@ -1,6 +1,5 @@
 #include "../headers/MNIST_initializer.hpp"
 
-// WINDOWS_ENV MUST BE ADJUSTED ACCORDINGLY
 #ifdef __unix__ /* __unix__ is usually defined by compilers targeting Unix systems */
 #include "../mnist/mnist_reader.hpp"
 
