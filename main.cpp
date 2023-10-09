@@ -17,6 +17,6 @@ int main(int argc, char* argv[]) {
                     number_of_output_neurons);
 
     Training training(network);
-
+    std::cout << "env: " << __unix__ << std::endl;
     return EXIT_SUCCESS;
 }

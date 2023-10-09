@@ -10,8 +10,6 @@
 
 ## How to build the project locally:
 
-when building on windows make sure to adjust env var in MNIST_initializer.cpp file
-
 Run the following commands consecutively from within the root of this repo:
 1. `cmake -S ./ -B build/`
 2. `cd build && make`

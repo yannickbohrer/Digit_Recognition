@@ -1,12 +1,14 @@
 #include "../headers/MNIST_initializer.hpp"
 
 // WINDOWS_ENV MUST BE ADJUSTED ACCORDINGLY
-#define WINDOWS_ENV 0
-
-#if WINDOWS_ENV == 0
+#ifdef __unix__ /* __unix__ is usually defined by compilers targeting Unix systems */
 #include "../mnist/mnist_reader.hpp"
-#else
+
+#elif defined(_WIN32) || \
+    defined(             \
+        WIN32) /* _Win32 is usually defined by compilers targeting 32 or   64 bit Windows systems */
 #include "../mnist/mnist_reader_less.hpp"
+
 #endif
 
 MNIST_initializer::MNIST_initializer() {
