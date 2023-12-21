@@ -1,11 +1,11 @@
 #include "../headers/MNIST_initializer.hpp"
 
-#ifdef __unix__ /* __unix__ is usually defined by compilers targeting Unix systems */
+#ifdef __unix__
 #include "../mnist/mnist_reader.hpp"
 
 #elif defined(_WIN32) || \
     defined(             \
-        WIN32) /* _Win32 is usually defined by compilers targeting 32 or   64 bit Windows systems */
+        WIN32)
 #include "../mnist/mnist_reader_less.hpp"
 
 #endif
