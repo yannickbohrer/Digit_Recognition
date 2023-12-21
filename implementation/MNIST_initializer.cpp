@@ -3,9 +3,7 @@
 #ifdef __unix__
 #include "../mnist/mnist_reader.hpp"
 
-#elif defined(_WIN32) || \
-    defined(             \
-        WIN32)
+#elif defined(_WIN32) || defined(WIN32)
 #include "../mnist/mnist_reader_less.hpp"
 
 #endif
